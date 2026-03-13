@@ -11,7 +11,7 @@ def hello():
 
 @app.route("/")
 def dashboard():
-    quotes = scrape_quotes(limit=6) 
+    quotes = scrape_quotes(limit=4) 
     df =quotes_to_df(quotes)
     #return "Hello World!"
     return render_template("dashboard.html",tables=[df.to_html (classes='data')],titles=df.columns.values)
