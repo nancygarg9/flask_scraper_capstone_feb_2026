@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title> Scraper Dashboard for batch Feb 2026 </title>
+    <link rel="stylesheet" href="{{url_for('static',filename='style.css')}}">
+</head>
+
+<body>
+    <h2> Quotes Dashboard </h2>
+    <div>
+        {% for rows in tables %}
+            {{ rows | safe  }}
+            <!-- this is equivalent to writing the for loop in pythin like for row in tables: <enter> 4 spaces : print(row) -->
+        {% endfor %}
+    </div>
+</body>
+</html>
