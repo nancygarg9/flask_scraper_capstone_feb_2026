@@ -24,7 +24,7 @@ def about():
     # put your code here """
 
 if __name__ == "__main__":
-    app.run(host="0.0.0.0",port=5500, debug=True) # use 5000 as port in your deployment unless you have anything running on that port.
+    app.run(host="0.0.0.0",port=5500, debug=False) # use 5000 as port in your deployment unless you have anything running on that port.
     #0.0.0.0 --> instead of localhost we are giving comp localnetwork
 
     
