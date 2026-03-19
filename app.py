@@ -11,7 +11,7 @@ def hello():
 
 @app.route("/")
 def dashboard():
-    quotes = scrape_quotes(limit=10) 
+    quotes = scrape_quotes(limit=5) 
     df =quotes_to_df(quotes)
     #return "Hello World!"
     return render_template("dashboard.html",tables=[df.to_html (classes='data')],titles=df.columns.values, page_title="Quotes Dashboard", page_type="quotes")
@@ -23,7 +23,7 @@ def dashboard():
 
 @app.route("/books")
 def dashboard_books():
-    books = scrape_books(limit=10) 
+    books = scrape_books(limit=5) 
     df =books_to_df(books)
     #return "Hello World!"
     return render_template("dashboard.html",tables=[df.to_html (classes='data')],titles=df.columns.values, page_title="Books Dashboard", page_type="books")
