@@ -19,25 +19,16 @@ def dashboard():
     # jinja2 -> flask template engine. it is what we use to work with python code inside the html
     # enhacenemnts - add more decorators like /about and put your description
 
-<<<<<<< HEAD
-# Books route added as enhancement by ***NANCY GARG***
-=======
 
 
->>>>>>> e697ec0 (updated)
 @app.route("/books")
 def dashboard_books():
     books = scrape_books(limit=10) 
     df =books_to_df(books)
     #return "Hello World!"
     return render_template("dashboard.html",tables=[df.to_html (classes='data')],titles=df.columns.values, page_title="Books Dashboard", page_type="books")
-<<<<<<< HEAD
 
-=======
     # converts the Dataframe DF into an html table
-    # jinja2 -> flask template engine. it is what we use to work with python code inside the html
-    # enhacenemnts - add more decorators like /about and put your description
->>>>>>> e697ec0 (updated)
 """ @app.route("/about")
 def about():
     # put your code here """
