@@ -10,15 +10,20 @@
 
     <h2>{{ page_title }}</h2>
     <div>
-        {% for rows in tables %}
-            {{ rows | safe  }}
+        {% if tables %}
+            {% for rows in tables %}
+              {{ rows | safe  }}
             <!-- this is equivalent to writing the for loop in python like for row in tables: <enter> 4 spaces : print(row) -->
-        {% endfor %}
+            {% endfor %}
+        {% elif page_content %}
+            <p>{{ page_content }}</p>
+        {% endif %}    
     </div>
     <nav>
-        <a href="{{ url_for('dashboard') }}">Quotes</a> |
+        <a href="{{ url_for('dashboard') }}">Quotes</a>
         <a href="{{ url_for('dashboard_books') }}">Books</a>
-   </nav>
+        <a href="{{ url_for('about') }}">About</a>
+    </nav>
 </body>
 </html>
 

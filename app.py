@@ -29,10 +29,18 @@ def dashboard_books():
     return render_template("dashboard.html",tables=[df.to_html (classes='data')],titles=df.columns.values, page_title="Books Dashboard", page_type="books")
 
     # converts the Dataframe DF into an html table
-""" @app.route("/about")
-def about():
-    # put your code here """
 
+#Enhancement by ***NANCY GARG***
+@app.route("/about")
+def about():
+    about_text = "I am Nancy Garg, a passionate Python learner. I love exploring new coding challenges and spending time enhancing my skills. My goal is to build projects that are both practical and fun, while continuously learning and growing as a developer."
+    return render_template(
+        "dashboard.html",
+        page_title="About Me",
+        page_type="about",
+        page_content=about_text,
+        tables=None  # no tables for About page
+    )
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0",port=5500, debug=False) # use 5000 as port in your deployment unless you have anything running on that port.
