@@ -6,10 +6,7 @@
 </head>
 
 <body class="{{ page_type }}">
-    <nav>
-    <a href="{{ url_for('dashboard') }}">Quotes</a> |
-    <a href="{{ url_for('dashboard_books') }}">Books</a>
-   </nav>
+  
 
     <h2>{{ page_title }}</h2>
     <div>
@@ -18,6 +15,10 @@
             <!-- this is equivalent to writing the for loop in python like for row in tables: <enter> 4 spaces : print(row) -->
         {% endfor %}
     </div>
+    <nav>
+        <a href="{{ url_for('dashboard') }}">Quotes</a> |
+        <a href="{{ url_for('dashboard_books') }}">Books</a>
+   </nav>
 </body>
 </html>
 
