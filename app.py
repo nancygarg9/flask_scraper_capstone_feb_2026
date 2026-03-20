@@ -11,8 +11,8 @@ def hello():
 
 @app.route("/")
 def dashboard():
-    quotes = scrape_quotes(limit=10) 
-    df =quotes_to_df(quotes)
+    quotes,author = scrape_quotes(limit=10) 
+    df =quotes_to_df(quotes,author)
     #return "Hello World!"
     return render_template("dashboard.html",tables=[df.to_html (classes='data')],titles=df.columns.values, page_title="Quotes Dashboard", page_type="quotes")
     # converts the Dataframe DF into an html table

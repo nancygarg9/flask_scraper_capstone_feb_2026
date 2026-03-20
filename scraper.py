@@ -19,10 +19,13 @@ def scrape_quotes(limit=5):  # default arg
         return []
 
     soup = BeautifulSoup(response.text, "html.parser")
-
+    #<span class="text" itemprop="text">“The world as we have created it is a process of our thinking. It cannot be changed without changing our thinking.”</span>
     quotes = [q.text for q in soup.find_all("span", class_="text")]
+    #<small class="author" itemprop="author">Albert Einstein</small>
+    author = [a.text for a in soup.find_all("small", class_="author")]
 
-    return quotes[:limit]  # return only required limit
+    return quotes[:limit], author[:limit] # return only required limit
+ 
 
 
 # books function added by ***NANCY GARG***
@@ -43,8 +46,8 @@ def scrape_books(limit=5):
 
 
 # Pandas Dataframe - very handy for tabular form of representation
-def quotes_to_df(quotes):
-    df = pd.DataFrame(quotes, columns=["Quotes"])
+def quotes_to_df(quotes,author):
+    df = pd.DataFrame({"Quotes": quotes, "Author": author} )
     return df
 
 

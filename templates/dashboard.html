@@ -6,6 +6,11 @@
 </head>
 
 <body class="{{ page_type }}">
+    <nav>
+    <a href="{{ url_for('dashboard') }}">Quotes</a> |
+    <a href="{{ url_for('dashboard_books') }}">Books</a>
+   </nav>
+
     <h2>{{ page_title }}</h2>
     <div>
         {% for rows in tables %}
@@ -17,7 +22,3 @@
 </html>
 
 
-<nav>
-    <a href="{{ url_for('dashboard') }}">Quotes</a> |
-    <a href="{{ url_for('dashboard_books') }}">Books</a>
-</nav>
