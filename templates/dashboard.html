@@ -17,6 +17,11 @@
             {% endfor %}
         {% elif page_content %}
             <p>{{ page_content }}</p>
+            <ul>
+              {% for item in enhancements %}
+                <li>{{ item }}</li>
+              {% endfor %}
+            </ul>
         {% endif %}    
     </div>
     <nav>
